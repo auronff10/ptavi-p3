@@ -48,6 +48,7 @@ if __name__ == "__main__":
     except IndexError:
         print 'Usage: python karaoke.py src_file.smil'
         sys.exit()
-    KaraokeLocal(fichero).__str__()
-    KaraokeLocal(fichero).do_local()
-    KaraokeLocal(fichero).__str__()
+    programa = KaraokeLocal(fichero)
+    programa.__str__()
+    programa.do_local()
+    programa.__str__()
