@@ -10,6 +10,10 @@ class SmallSMILHandler(ContentHandler):
     def __init__(self):
         self.lista = []
 
+    """
+    Creo una lista vacia que se llenara por appends
+    """
+
     def startElement(self, name, attrs):
 
         if name == "root-layout":

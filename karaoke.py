@@ -3,9 +3,9 @@
 import sys
 from xml.sax import make_parser
 from smallsmilhandler import SmallSMILHandler
-
+import os
 if __name__ == "__main__":
-
+    multimedia = []
     try:
         fichero = sys.argv[1]
     except IndexError:
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         sys.exit()
     parser = make_parser()
     sHandler = SmallSMILHandler()
-    parser.setContentHandler(sHandler)  
+    parser.setContentHandler(sHandler)
     parser.parse(open(fichero))
     lista = sHandler.get_tags()
     for linea in lista:
@@ -36,3 +36,8 @@ if __name__ == "__main__":
                 sentencia = clave + "=" + '"' + valor + '"'
                 print ('\t'), sentencia,
             print ('\n'),
+    for url in multimedia:
+        os.system("wget ­-q " + url)
+    locales = []
+    for valor in multimedia:
+        locales.append(valor.split("/")[-1])
