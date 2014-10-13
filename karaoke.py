@@ -23,7 +23,7 @@ class KaraokeLocal(SmallSMILHandler):
             contenido = index[1]
             for elemento in contenido:
                 if contenido[elemento] != "":
-                    print '\t', elemento, '=', contenido[elemento],
+                    print '\t'+elemento+'='+"'"+contenido[elemento]+"'",
             print
 
     def do_local(self):
